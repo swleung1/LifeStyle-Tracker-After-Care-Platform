@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  patient
+  doctor
+}
+
+enum Urgency {
+  low
+  medium
+  high
+}
+
+enum Risk {
+  ok
+  watch
+  urgent
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         Role
+  createdAt    DateTime  @default(now())
+  patient      Patient?
+  doctorPatients DoctorPatient[] @relation("DoctorPatients_doctor")
+  appointmentsAsDoctor Appointment[] @relation("DoctorAppointments_doctor")
+  appointmentsAsPatient Appointment[] @relation("PatientAppointments_patient")
+}
+
+model Patient {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @unique
+  user      User     @relation(fields: [userId], references: [id])
+  condition String?
+  doctor    User?    @relation("PrimaryDoctor", fields: [primaryDoctorId], references: [id])
+  primaryDoctorId Int?
+  carePlans CarePlan[]
+  surveys   Survey[]
+  links     DoctorPatient[] @relation("DoctorPatients_patient")
+}
+
+model DoctorPatient {
+  id        Int    @id @default(autoincrement())
+  doctorId  Int
+  patientId Int
+  doctor    User    @relation("DoctorPatients_doctor", fields: [doctorId], references: [id])
+  patient   Patient @relation("DoctorPatients_patient", fields: [patientId], references: [id])
+
+  @@unique([doctorId, patientId])
+}
+
+model CarePlan {
+  id         Int           @id @default(autoincrement())
+  patientId  Int
+  title      String
+  active     Boolean       @default(true)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  patient    Patient       @relation(fields: [patientId], references: [id])
+  instructions Instruction[]
+}
+
+model Instruction {
+  id           Int      @id @default(autoincrement())
+  carePlanId   Int
+  title        String
+  description  String
+  urgency      Urgency
+  orderIndex   Int       @default(0)
+  carePlan     CarePlan  @relation(fields: [carePlanId], references: [id])
+}
+
+model Survey {
+  id          Int       @id @default(autoincrement())
+  patientId   Int
+  submittedAt DateTime  @default(now())
+  risk        Risk
+  responses   Json
+  patient     Patient   @relation(fields: [patientId], references: [id])
+
+  @@index([patientId, submittedAt])
+}
+
+model Appointment {
+  id          Int      @id @default(autoincrement())
+  doctorId    Int
+  patientId   Int
+  startAt     DateTime
+  link        String?
+  notes       String?
+  doctor      User     @relation("DoctorAppointments_doctor", fields: [doctorId], references: [id])
+  patient     User     @relation("PatientAppointments_patient", fields: [patientId], references: [id])
+
+  @@index([doctorId, startAt])
+}
