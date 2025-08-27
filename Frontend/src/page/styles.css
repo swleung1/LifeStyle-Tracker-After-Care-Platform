@@ -1,0 +1,19 @@
+
+
+body{
+
+    height: 100vh;
+    margin: auto;
+    /* width: 100vw; */
+}
+
+.Navbar{
+    border-radius: 15px; /* rounds edges */
+  margin: 20px auto; /* spacing from top/bottom */
+  padding: 10px 20px; /*padding inside navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*subtle shadow */
+  max-width: 100%; /* Ensures no overflow on small screens */
+  box-sizing: border-box;
+
+    width: 100%;
+}
