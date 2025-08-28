@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -29,12 +29,13 @@ model User {
   name         String
   email        String    @unique
   passwordHash String
-  role         Role
+  role         Role      @default(patient)
   createdAt    DateTime  @default(now())
   patient      Patient?
   doctorPatients DoctorPatient[] @relation("DoctorPatients_doctor")
   appointmentsAsDoctor Appointment[] @relation("DoctorAppointments_doctor")
   appointmentsAsPatient Appointment[] @relation("PatientAppointments_patient")
+  Patients Patient[] @relation("PrimaryDoctor")
 }
 
 model Patient {
@@ -99,7 +100,7 @@ model Appointment {
   link        String?
   notes       String?
   doctor      User     @relation("DoctorAppointments_doctor", fields: [doctorId], references: [id])
-  patient     User     @relation("PatientAppointments_patient", fields: [patientId], references: [id])
+  patient     User    @relation("PatientAppointments_patient", fields: [patientId], references: [id])
 
   @@index([doctorId, startAt])
 }
