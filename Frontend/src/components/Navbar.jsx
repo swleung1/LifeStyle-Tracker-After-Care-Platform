@@ -4,12 +4,16 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4">
-      <a class="navbar-brand" href="#">
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4 px-4 py-3 shadow rounded-pill"
+      style={{ borderRadius: '50px' }}
+    >
+      <a className="navbar-brand text-white fw-bold" href="#">
         Patient Dashboard
       </a>
+
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -17,27 +21,27 @@ const Navbar = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item active">
+            <a className="nav-link text-white" href="#">
+              Home <span className="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Features
+          <li className="nav-item">
+            <a className="nav-link text-white" href="#">
+              Daily Checkin
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Pricing
+          <li className="nav-item">
+            <a className="nav-link text-white" href="#">
+             Chat
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">
+          <li className="nav-item">
+            <a className="nav-link disabled text-white-50" href="#">
               Disabled
             </a>
           </li>

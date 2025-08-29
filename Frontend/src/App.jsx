@@ -5,7 +5,8 @@ import { health } from './services/api';
 //this is the "Home" file
 import Navbar from './components/Navbar.jsx';
 // import drNavbar from './components/DrNavbar.jsx';
-
+import PDash from './components/PDash.jsx';
+import Psidebar from './components/Psidebar.jsx';
 
 
 
@@ -16,13 +17,15 @@ export default function App() {
 
   
     <div className="container text-center">
-     
+     <h1 className="title-top mb-3">Patient Aftercare Tracker</h1>
      {/* <div className="py-3 d-flex justify-content-center"></div> */}
         <Navbar />  {/* added by me */}
 
+        <PDash />  {/* added by me */}
+    
         {/* <drNavbar /> //added by me */}
 
-      <h1 className="mb-3">LifeStyle Tracker</h1>
+      
       <p className="text-muted">Backend says: {msg}</p>
     </div>
   );

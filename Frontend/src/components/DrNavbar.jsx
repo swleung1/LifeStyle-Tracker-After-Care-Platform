@@ -47,5 +47,5 @@ const drNavbar = () => {
     );
 }
 
-// will Export the Navbar component to other files (Home and Main)
+//export to App
 export default drNavbar 

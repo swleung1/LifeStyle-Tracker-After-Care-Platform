@@ -1,19 +1,22 @@
 //Routing pages for the webapp
 //added by me
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from '../page/Home.jsx';
-import Chat from '../page/Chat.jsx';
+import { createBrowserRouter, createRoutesFromElements, Route, } from 'react-router-dom';
+// import Home from '../page/Home.jsx';
+// import Chat from '../page/Chat.jsx';
 import App from '../App.jsx';
 
-export default function AppRoutes() {
-  return (
-    // <BrowserRouter>
+import { Home } from '../page/Home.jsx';
 
-      <Routes>
+import { Chat } from '../page/Chat.jsx';
+
+export const router = createBrowserRouter(
+createRoutesFromELements(
+ 
+  <Route path="/" element={<App />} >
+   
         <Route path="/" element={<Home />} />
         <Route path="/chat" element={<Chat />} />
-      </Routes>
-    // </BrowserRouter>
-  );
-}
+  </Route>
+)
+);
