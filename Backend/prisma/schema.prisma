@@ -23,6 +23,12 @@ enum Risk {
   watch
   urgent
 }
+enum AppointmentStatus {
+  scheduled
+  completed
+  canceled
+  no_show
+}
 
 model User {
   id           Int       @id @default(autoincrement())
@@ -48,14 +54,15 @@ model Patient {
   carePlans CarePlan[]
   surveys   Survey[]
   links     DoctorPatient[] @relation("DoctorPatients_patient")
+  @@index([primaryDoctorId])
 }
 
 model DoctorPatient {
   id        Int    @id @default(autoincrement())
   doctorId  Int
   patientId Int
-  doctor    User    @relation("DoctorPatients_doctor", fields: [doctorId], references: [id])
-  patient   Patient @relation("DoctorPatients_patient", fields: [patientId], references: [id])
+  doctor    User    @relation("DoctorPatients_doctor", fields: [doctorId], references: [id], onDelete: Cascade)
+  patient   Patient @relation("DoctorPatients_patient", fields: [patientId], references: [id], onDelete: Cascade)
 
   @@unique([doctorId, patientId])
 }
@@ -69,6 +76,7 @@ model CarePlan {
   updatedAt  DateTime      @updatedAt
   patient    Patient       @relation(fields: [patientId], references: [id])
   instructions Instruction[]
+  @@index([patientId, active])
 }
 
 model Instruction {
@@ -78,7 +86,7 @@ model Instruction {
   description  String
   urgency      Urgency
   orderIndex   Int       @default(0)
-  carePlan     CarePlan  @relation(fields: [carePlanId], references: [id])
+  carePlan     CarePlan  @relation(fields: [carePlanId], references: [id], onDelete: Cascade)
 }
 
 model Survey {
@@ -87,9 +95,10 @@ model Survey {
   submittedAt DateTime  @default(now())
   risk        Risk
   responses   Json
-  patient     Patient   @relation(fields: [patientId], references: [id])
+  patient     Patient   @relation(fields: [patientId], references: [id], onDelete: Cascade)
 
   @@index([patientId, submittedAt])
+ 
 }
 
 model Appointment {
@@ -101,6 +110,7 @@ model Appointment {
   notes       String?
   doctor      User     @relation("DoctorAppointments_doctor", fields: [doctorId], references: [id])
   patient     User    @relation("PatientAppointments_patient", fields: [patientId], references: [id])
+  status AppointmentStatus @default(scheduled)
 
   @@index([doctorId, startAt])
 }

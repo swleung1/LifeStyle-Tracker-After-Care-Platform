@@ -4,7 +4,7 @@ CREATE TABLE `User` (
     `name` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `passwordHash` VARCHAR(191) NOT NULL,
-    `role` ENUM('patient', 'doctor') NOT NULL,
+    `role` ENUM('patient', 'doctor') NOT NULL DEFAULT 'patient',
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     UNIQUE INDEX `User_email_key`(`email`),
@@ -19,6 +19,7 @@ CREATE TABLE `Patient` (
     `primaryDoctorId` INTEGER NULL,
 
     UNIQUE INDEX `Patient_userId_key`(`userId`),
+    INDEX `Patient_primaryDoctorId_idx`(`primaryDoctorId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -41,6 +42,7 @@ CREATE TABLE `CarePlan` (
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
+    INDEX `CarePlan_patientId_active_idx`(`patientId`, `active`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -76,6 +78,7 @@ CREATE TABLE `Appointment` (
     `startAt` DATETIME(3) NOT NULL,
     `link` VARCHAR(191) NULL,
     `notes` VARCHAR(191) NULL,
+    `status` ENUM('scheduled', 'completed', 'canceled', 'no_show') NOT NULL DEFAULT 'scheduled',
 
     INDEX `Appointment_doctorId_startAt_idx`(`doctorId`, `startAt`),
     PRIMARY KEY (`id`)
@@ -88,19 +91,19 @@ ALTER TABLE `Patient` ADD CONSTRAINT `Patient_userId_fkey` FOREIGN KEY (`userId`
 ALTER TABLE `Patient` ADD CONSTRAINT `Patient_primaryDoctorId_fkey` FOREIGN KEY (`primaryDoctorId`) REFERENCES `User`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `DoctorPatient` ADD CONSTRAINT `DoctorPatient_doctorId_fkey` FOREIGN KEY (`doctorId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `DoctorPatient` ADD CONSTRAINT `DoctorPatient_doctorId_fkey` FOREIGN KEY (`doctorId`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `DoctorPatient` ADD CONSTRAINT `DoctorPatient_patientId_fkey` FOREIGN KEY (`patientId`) REFERENCES `Patient`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `DoctorPatient` ADD CONSTRAINT `DoctorPatient_patientId_fkey` FOREIGN KEY (`patientId`) REFERENCES `Patient`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `CarePlan` ADD CONSTRAINT `CarePlan_patientId_fkey` FOREIGN KEY (`patientId`) REFERENCES `Patient`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Instruction` ADD CONSTRAINT `Instruction_carePlanId_fkey` FOREIGN KEY (`carePlanId`) REFERENCES `CarePlan`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Instruction` ADD CONSTRAINT `Instruction_carePlanId_fkey` FOREIGN KEY (`carePlanId`) REFERENCES `CarePlan`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Survey` ADD CONSTRAINT `Survey_patientId_fkey` FOREIGN KEY (`patientId`) REFERENCES `Patient`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Survey` ADD CONSTRAINT `Survey_patientId_fkey` FOREIGN KEY (`patientId`) REFERENCES `Patient`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Appointment` ADD CONSTRAINT `Appointment_doctorId_fkey` FOREIGN KEY (`doctorId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
