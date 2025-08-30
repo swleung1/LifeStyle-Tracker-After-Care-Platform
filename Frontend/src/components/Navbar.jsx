@@ -2,17 +2,33 @@
 
 import React from "react";
 
-const Navbar = () => {
+import { useEffect, useState } from "react";
+
+function Navbar() {
+  const [patientName, setPatientName] = useState("");
+
+  useEffect(() => {
+    // Patient NAME Fetch from your backend API
+    fetch("/api/patient")
+      .then((res) => res.json())
+      .then((data) => {
+        setPatientName(data.name); // API response
+      })
+      .catch((err) => console.error("Failed to fetch patient name", err));
+  }, []);
+
+  // const Navbar = () => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4 px-4 py-3 shadow rounded-pill"
-      style={{ borderRadius: '50px' }}
+      style={{ borderRadius: "50px" }}
     >
       <a className="navbar-brand text-white fw-bold" href="#">
-        Welcome! Patient Name
+        {/* imports patent name data pulled from our database/backend */}
+        Welcome {patientName ? patientName : "Patient"}!
       </a>
 
-      <button
+      {/* <button
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -22,7 +38,7 @@ const Navbar = () => {
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon"></span>
-      </button>
+      </button> */}
       {/* <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item active">
@@ -49,7 +65,7 @@ const Navbar = () => {
       </div> */}
     </nav>
   );
-};
+}
 
 //export to App
 export default Navbar;
