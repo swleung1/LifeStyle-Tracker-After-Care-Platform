@@ -27,7 +27,7 @@
 //   </StrictMode>
 // )
 
-
+//---------------------=======----------------------------
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './page/styles.css'  // Global styles for your application
@@ -38,14 +38,15 @@ import { StrictMode } from 'react';
 
 
 const Main = () => {
+  console.log("Main component rendered");
   return (
-    <React.StrictMode>
+    <StrictMode>
       <StoreProvider> 
                 {/* Set up routing for the application */} 
-                <RouterProvider router={router}>
-                </RouterProvider>
+                <RouterProvider router={router} />
+                {/* </RouterProvider> */}
             </StoreProvider>
-        </React.StrictMode>
+        </StrictMode>
     );
 }
 
