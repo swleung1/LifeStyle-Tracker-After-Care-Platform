@@ -39,7 +39,7 @@ body{
     padding: 30px; /* space sides of sidebar */
     box-shadow: 4px 0 5px rgba(0,0,0,0.1);
     border-radius: 30px;
-    margin: 20px auto;
+    margin: 20px;
     display: flex;
     justify-items: flex-start;
    
@@ -86,10 +86,13 @@ body{
     padding: 20px;
     border-radius: 20px;
     height: 60vh;
-    max-width: 100%;
+    /* width: 80%; */
+    
+    /* justify-content: center; */
 }
 
-/* .dashboard-view{
-    border-radius: 20px;
-    
-} */
+/* dashbord card/container width */
+.dashboard-view{
+
+    width: 100%;
+}

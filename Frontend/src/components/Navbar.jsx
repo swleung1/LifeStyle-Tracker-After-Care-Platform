@@ -9,7 +9,7 @@ const Navbar = () => {
       style={{ borderRadius: '50px' }}
     >
       <a className="navbar-brand text-white fw-bold" href="#">
-        Patient Dashboard
+        Welcome! Patient Name
       </a>
 
       <button

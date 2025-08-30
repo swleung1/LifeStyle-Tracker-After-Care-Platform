@@ -1,9 +1,10 @@
 /* Patient styles sheet */
 
 
-/* DASHBOARD HEADER & CONTENT STYLES */
+/* DASHBOARD HEADER & CONTENT STYLES - PHeader.jsx */
 
 .pheader{
+
 
     /* width: 75%; */
 
@@ -14,6 +15,43 @@
 
 .pheadtitle{
     color: rgb(6, 87, 6);
-    
+    font-family: 'Bungee', sans-serif;
+     /* font-weight: 200px; */
+}
 
+.pheader_activ{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+}
+
+.searchbar{
+
+}
+
+/*_______ notification icon -----------*/
+.notify{
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 10px;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.5s ease-in-out;
+}
+
+.notify .icon{
+    color: whitesmoke;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;  /* slows icon hovering affect */
+   
+}
+
+.icon:hover{
+
+    transform: scale(1.3); /* any icon hovering affect */
+    cursor: pointer;
 }
