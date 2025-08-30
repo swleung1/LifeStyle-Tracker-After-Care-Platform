@@ -31,10 +31,10 @@ body{
   /* width: 100%; */
 }
  
-/***************** side bar styles **********************/
+/***************** Patient sidebar (PSidebar.jsx) menu **********************/
 .psidebar_menu{
     height: 50vh;
-    width: 250px;
+    max-width: 40%;
     background-color: #f8f9fa;
     padding: 30px; /* space sides of sidebar */
     box-shadow: 4px 0 5px rgba(0,0,0,0.1);
@@ -44,17 +44,18 @@ body{
     justify-items: flex-start;
    
     float: left; /* moves sidebar left  */
+
 }
 
 .list_item{
     text-decoration: none;
     color: #092c9f;
-    padding: 10px;
+    padding: 10px; /* vertical spacing btwn items*/
     /* margin-bottom: 10px; */
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
-    gap: 20px; /* space between icon and text */
+    gap: 20px; /* space between icons and text */
     border-radius: 10px;
     cursor: pointer;
      
@@ -78,13 +79,14 @@ body{
   /* color: #d50303; */
   font-size: 20px;
 }
-/************************ Dashboard View */
+/************************ Patient Dashboard View */
 .pdash{
   display: flex;
     /* margin-left: 300px; to avoid overlap with sidebar */
     padding: 20px;
     border-radius: 20px;
-    height: 40vh;
+    height: 60vh;
+    max-width: 100%;
 }
 
 /* .dashboard-view{

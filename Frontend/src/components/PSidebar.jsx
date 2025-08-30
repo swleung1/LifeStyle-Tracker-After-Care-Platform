@@ -4,7 +4,7 @@ import { BiHome, BiBookAlt, BiMessage, BiSolidReport, BiStats, BiTask, BiHeart, 
 
 const Psidebar = () => {
   return (
-    <div className="psidebar_menu container align-items-start flex-column"> 
+    <div className="psidebar_menu align-items-start flex-column"> 
     {/*d-flex shadow bg-body-tertiary p-3 mb-5 bg-body rounded */}
       
 
