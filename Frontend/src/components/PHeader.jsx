@@ -2,7 +2,7 @@
 
 import React from "react";
 import { BiSearch, BiNotification } from "react-icons/bi";
-import "../styles/phead.css"
+import "../styles/pdash.css"
 
 const PHeader = () => {
   return (

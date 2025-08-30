@@ -8,7 +8,7 @@ const PDash = () => {
     return ( 
 
         // PAtient Dash and LAYOUT
-        <div className="pdash  ">
+        <div className="pdash">
             {/* Patient sidebar  */}
             <Psidebar /> 
 

@@ -79,20 +79,3 @@ body{
   /* color: #d50303; */
   font-size: 20px;
 }
-/************************ Patient Dashboard View */
-.pdash{
-  display: flex;
-    /* margin-left: 300px; to avoid overlap with sidebar */
-    padding: 20px;
-    border-radius: 20px;
-    height: 60vh;
-    /* width: 80%; */
-    
-    /* justify-content: center; */
-}
-
-/* dashbord card/container width */
-.dashboard-view{
-
-    width: 100%;
-}
