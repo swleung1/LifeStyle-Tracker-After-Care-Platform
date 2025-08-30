@@ -6,11 +6,22 @@ import App from '../App.jsx';
 import Home  from '../page/Home.jsx';
 import Chat  from '../page/Chat.jsx';
 
-export const router = createBrowserRouter(
-createRoutesFromElements(
-  <Route path="/" element={<App />} >
-        <Route path="/" element={<Home />} />
-        <Route path="/chat" element={<Chat />} />
-  </Route>
- )
-);
+// export const router = createBrowserRouter(
+// createRoutesFromElements(
+//   <Route path="/" element={<App />} >
+//         <Route path="/" element={<Home />} />
+//         <Route path="/chat" element={<Chat />} />
+//   </Route>
+//  )
+// ); 
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/chat",
+    element: <Chat />,
+  },
+]);
