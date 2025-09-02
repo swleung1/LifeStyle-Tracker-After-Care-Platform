@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { BiHome, BiBookAlt, BiMessage, BiSolidReport, BiStats, BiTask, BiHeart, BiHeartCircle } from "react-icons/bi";// ICONS installed react-icons with: npm install react-icons --save
 
 const Psidebar = () => {
@@ -14,15 +16,17 @@ const Psidebar = () => {
       </div>
 
       <div className="menu_list d-flex flex-column align-items-start py-3 mb-5">
-        <a href="#" className="list_item mb-3">
-            
+        <Link to="/" className="list_item mb-3">
             <BiHome className="icons"/>{/* Icons */}   
             <span> Home</span>
-        </a>
-        <a href="#" className="list_item mb-3 ">
+        </Link>
+        
+        {/* daily Survey tab Link to survey page*/}
+        <Link to="/dailycheckin" className="list_item mb-3 ">
             <BiHeartCircle className="heart_i" />
             <span> Daily Checkin</span> 
-        </a>{/* Wellness Survey Link to page*/}
+        </Link>
+
         <a href="#" className="list_item mb-3">
             <BiMessage className="icons"/>
             <span> Chat</span>

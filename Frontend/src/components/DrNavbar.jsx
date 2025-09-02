@@ -3,7 +3,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-function  drNavbar() {
+function  DrNavbar() {
   const [drName, setDrName] = useState("");
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function  drNavbar() {
       className="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4 px-4 py-3 shadow rounded-pill"
       style={{ borderRadius: "50px" }}
     >
-      <a className="navbar-brand text-white fw-bold" href="#">
+      <a className="navbar-brand text-white bg fw-bold" href="#">
         {/* imports patent name data pulled from our database/backend */}
         Welcome {drName ? drName : "Care Provider"}!
       </a>
@@ -32,4 +32,4 @@ function  drNavbar() {
 }
 
 //export to App
-export default drNavbar 
+export default DrNavbar 
