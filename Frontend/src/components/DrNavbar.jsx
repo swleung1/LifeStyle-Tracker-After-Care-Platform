@@ -1,50 +1,34 @@
 // Navbar - Medical Pro Navbar
 
 import React from "react";
+import { useEffect, useState } from "react";
 
-const drNavbar = () => {
-    return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4">
-      <a class="navbar-brand" href="#">
-        Medical Professional Dashboard
+function  drNavbar() {
+  const [drName, setDrName] = useState("");
+
+  useEffect(() => {
+    // Dr NAME Fetch from your backend API
+    fetch("/api/dr")
+      .then((res) => res.json())
+      .then((data) => {
+        setDrName(data.name); // API response
+      })
+      .catch((err) => console.error("Failed to fetch Dr name", err));
+  }, []);
+
+ return (
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4 px-4 py-3 shadow rounded-pill"
+      style={{ borderRadius: "50px" }}
+    >
+      <a className="navbar-brand text-white fw-bold" href="#">
+        {/* imports patent name data pulled from our database/backend */}
+        Welcome {drName ? drName : "Care Provider"}!
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      {/* <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Features
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Pricing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">
-              Disabled
-            </a>
-          </li>
-        </ul>
-      </div> */}
+
+
     </nav>
-    );
+  );
 }
 
 //export to App

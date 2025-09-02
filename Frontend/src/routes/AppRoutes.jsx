@@ -6,6 +6,7 @@ import App from '../App.jsx';
 import Home  from '../page/Home.jsx';
 import Chat  from '../page/Chat.jsx';
 import PSurvey from '../components/PSurvey.jsx';
+// import drNavbar from '../components/DrNavbar.jsx';
 
 // export const router = createBrowserRouter(
 // createRoutesFromElements(
@@ -29,5 +30,11 @@ export const router = createBrowserRouter([
     path: "/dailycheckin",
     element: <PSurvey />,
   },
+  //  {
+   
+  //   path: "/drnav",
+  //   element: <DrNavbar />,
+  // },
 
-]);
+
+]); 

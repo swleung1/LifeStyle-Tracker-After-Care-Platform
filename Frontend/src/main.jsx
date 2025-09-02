@@ -1,33 +1,4 @@
 
-// import { RouterProvider } from 'react-router-dom'
-// // import AppRoutes from './routes/AppRoutes.jsx'
-
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// // import './index.css'
-// import App from './App.jsx'
-
-// import './page/styles.css' // Import the CSS file
-// // import { router } from './routes/AppRoutes'
-
-// import { router as AppRoutes } from './routes/AppRoutes.jsx'
-
-
-// // import { createBrowserRouter } from 'react-router-dom';
-
-
-
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-    
-//     {/*<App /> */}
-//     <RouterProvider router={AppRoutes} ></RouterProvider>
-
-//   </StrictMode>
-// )
-
-//---------------------=======----------------------------
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/styles.css'  
