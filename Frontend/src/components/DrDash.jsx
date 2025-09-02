@@ -5,6 +5,7 @@ import react from 'react';
 // import Pcard from './Pcard';
 
 import DrNavbar from './DrNavbar';
+import Drsidebar from './Drsidebar';
 
 const DrDash = () => {
     return ( 
@@ -12,9 +13,10 @@ const DrDash = () => {
         // DR Dash and LAYOUT
         <div className="drdash">
             {/* Dr sidebar  */}
-            {/* <Psidebar />  */}
+              <DrNavbar /> 
+               <Drsidebar /> 
 
-            <DrNavbar />
+         
 
             <div className="dashboard-view mx-4 p-4 bg-light rounded shadow">
              <div className="mb-4 ">

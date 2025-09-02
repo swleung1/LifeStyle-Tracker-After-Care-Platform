@@ -25,11 +25,9 @@ function  DrNavbar() {
         {/* imports patent name data pulled from our database/backend */}
         Welcome {drName ? drName : "Care Provider"}!
       </a>
-
-
     </nav>
   );
 }
 
-//export to App
+//exported to DrDash.jsx
 export default DrNavbar 

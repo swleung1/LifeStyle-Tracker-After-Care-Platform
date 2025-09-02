@@ -4,7 +4,7 @@ import { health } from './services/api';
 
 //this is the "Home" file
 import Navbar from './components/Navbar.jsx';
-// import drNavbar from './components/DrNavbar.jsx';
+
 import PDash from './components/PDash.jsx';
 import Psidebar from './components/Psidebar.jsx';
 
