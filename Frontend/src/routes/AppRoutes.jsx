@@ -5,6 +5,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 import App from '../App.jsx';
 import Home  from '../page/Home.jsx';
 import Chat  from '../page/Chat.jsx';
+import PSurvey from '../components/PSurvey.jsx';
 
 // export const router = createBrowserRouter(
 // createRoutesFromElements(
@@ -24,4 +25,9 @@ export const router = createBrowserRouter([
     path: "/chat",
     element: <Chat />,
   },
+    {
+    path: "/dailycheckin",
+    element: <PSurvey />,
+  },
+
 ]);
