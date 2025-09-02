@@ -1,6 +1,5 @@
-import { PrismaClient } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-const prisma = new PrismaClient();
+import { prisma } from './db.js';
 
 async function main() {
   // Create 3 doctors
