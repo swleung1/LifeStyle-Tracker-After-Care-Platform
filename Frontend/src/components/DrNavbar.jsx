@@ -8,7 +8,9 @@ function  DrNavbar() {
 
   useEffect(() => {
     // Dr NAME Fetch from your backend API
-    fetch("/api/dr")
+    // fetch("/api/dr")
+    // fetch("http://localhost:5000/api/dr")
+    fetch("/api/dr-name")
       .then((res) => res.json())
       .then((data) => {
         setDrName(data.name); // API response

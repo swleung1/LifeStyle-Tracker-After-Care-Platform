@@ -1,0 +1,16 @@
+/************************ Dr Dashboard View */
+
+
+/* dashbord card/container width */
+.dr_dashboard-view{
+  /* position: relative; */
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+    width: 70%; 
+     height: 60vh;
+}
+/* dashbord card/container height */

@@ -3,15 +3,6 @@
 
 /* DASHBOARD HEADER & Dash CONTENT STYLES - PHeader.jsx */
 
-.pheader{
-
-
-    /* width: 75%; */
-
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
-}
 
 .pheadtitle{
     color: rgb(6, 87, 6);
@@ -77,70 +68,3 @@
     width: 100%;
 }
 
-/********************** Patient DashboardCard styles *************************************/
-
-.pcard_contain{
-
-    display: flex;
-    gap: 20px;
-    /* align-items: center;
-     */
-    margin-bottom: 4rem;
-    position: relative;
-}
-
-.pcard{
-    /* container for each item */
-    flex: 1;
-    /* background: #dde6ed; */
-    background-image:  conic-gradient(from 0deg at 20% 50%, rgb(250, 141, 141), rgb(253, 253, 159), rgb(167, 255, 167), rgb(179, 179, 255), rgb(209, 122, 122));
-    border-radius: 50px;
-    padding: 20px;
-     box-shadow: 4px 0 5px rgba(0,0,0,0.1);
-
-     display: flex;
-     align-items: center;
-     flex-direction: column;
-     transition: 0.5s ease-in-out;
-     gap: 10px;
-     opacity: 0.8;
-     height: 40%;
-    margin-top: 4rem;
-     border-color: rgb(232, 64, 120);
-
-     /* position: absolute;
-    top: 10px;
-    left: 50px; */
-   
-     
-}
-
-.pcard:hover{
-    transform: scale(1.05); /* any card hovering affect */
-    cursor: pointer;
-}
-
-.pcard_cover{
-    color:rgb(29, 35, 40, 1.5);
-    font-size: 1.5rem;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 20px;
-    background-color:rgb(243, 247, 197, 0.3);
-
-}
-
-.pcard_titles{
-    font-size: 10px;
-     background-color:rgb(243, 247, 197, 0.3);
-     width: 100%;
-     text-align: center;
-     padding: 10px 0;
-     color: black;
-     border-radius: 10px;
-
-   left: 50px;
-
-}

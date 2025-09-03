@@ -6,6 +6,8 @@ import react from 'react';
 
 import DrNavbar from './DrNavbar';
 import Drsidebar from './Drsidebar';
+import Drcards from './Drcards';
+import "../styles/drdash.css";
 
 const DrDash = () => {
     return ( 
@@ -18,10 +20,10 @@ const DrDash = () => {
 
          
 
-            <div className="dashboard-view mx-4 p-4 bg-light rounded shadow">
+            <div className="dr_dashboard-view mx-4 p-4 bg-light rounded shadow">
              <div className="mb-4 ">
                
-                
+                <Drcards />
                 {/* <PHeader /> */}
                  {/* <Pcard /> */}
               

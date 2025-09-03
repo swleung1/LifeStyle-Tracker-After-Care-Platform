@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { BiHome, BiBookAlt, BiMessage, BiSolidReport, BiStats, BiTask, BiHeart, BiHeartCircle } from "react-icons/bi";// ICONS installed react-icons with: npm install react-icons --save
+import "../styles/psideb.css"
 
 const Psidebar = () => {
   return (
