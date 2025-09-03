@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-export function SignupPage() {
+function SignupPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
