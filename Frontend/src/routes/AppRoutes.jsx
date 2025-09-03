@@ -7,21 +7,22 @@ import Home  from '../page/Home.jsx';
 import Chat  from '../page/Chat.jsx';
 import PSurvey from '../components/PSurvey.jsx';
 import DrDash from '../components/DrDash.jsx';
-// import drNavbar from '../components/DrNavbar.jsx';
+import DrApp from '../DrApp.jsx';
 
-// export const router = createBrowserRouter(
-// createRoutesFromElements(
-//   <Route path="/" element={<App />} >
-//         <Route path="/" element={<Home />} />
-//         <Route path="/chat" element={<Chat />} />
-//   </Route>
-//  )
-// ); 
 
 export const router = createBrowserRouter([
+
   {
     path: "/",
     element: <App />,
+  },
+  // {
+  //   path: "/",
+  //   element: <Login/>,
+  // },
+   {
+    path: "/drdash",
+    element: <DrApp />,
   },
   {
     path: "/chat",
@@ -32,10 +33,10 @@ export const router = createBrowserRouter([
     element: <PSurvey />,
   },
   
-  {
-    path: "/drdash",
-    element: <DrDash />,
-  }
+  // {
+  //   path: "/drdash",
+  //   element: <DrDash />,
+  // }
 
 
 ]); 

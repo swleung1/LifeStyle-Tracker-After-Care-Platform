@@ -24,14 +24,7 @@ import "../styles/pdash.css";
 const PHeader = () => {
   return (
     <div className="pheader d-flex justify-content-between align-items-end mb-4">
-      {/* <div className="pheadtitle ">Care Instructions: </div>
-      <div className="pheader_activ">
-        <div className="care_instructs d-flex align-items-center">
-          {/* imports instructions data pulled from our database/backend */}
-          {/* {patientInstructions
-            ? patientInstructions
-            : "No Instructions from your care provider"}
-        </div> */} 
+   
 
         <div className="notify">
           <BiNotification className="icon" />
