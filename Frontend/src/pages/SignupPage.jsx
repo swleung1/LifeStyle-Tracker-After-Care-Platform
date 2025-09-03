@@ -2,23 +2,19 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
 function SignupPage() {
+  const [role, setRole] = useState("");
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    role: "Patient",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard"); 
+    if (role === "Patient") {
+      navigate("/patient-dashboard");
+    } else if (role === "Doctor") {
+      navigate("/doctor-dashboard");
+    } else {
+      console.warn("Invalid role selected");
+    }
   };
   return (
     <div className="d-flex justify-content-center mt-5">
@@ -37,8 +33,6 @@ function SignupPage() {
             className="form-control"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             required
           />
         </div>
@@ -52,8 +46,6 @@ function SignupPage() {
             id="email"
             className="form-control"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
             required
           />
         </div>
@@ -67,8 +59,6 @@ function SignupPage() {
             id="password"
             className="form-control"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
             required
           />
         </div>
@@ -81,9 +71,10 @@ function SignupPage() {
             className="form-select"
             id="role"
             name="role"
-            value={formData.role}
-            onChange={handleChange}
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
           >
+            <option value="">-- Please select --</option>
             <option value="Patient">Patient</option>
             <option value="Doctor">Doctor</option>
           </select>
