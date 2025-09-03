@@ -95,9 +95,9 @@ export function SignupPage() {
         <hr />
         <div className="mt-3 text-center">
           <span>Already have an account? </span>
-          {<Link to="/login" className="text-decoration-none text-primary">
+          <Link to="/login" className="text-decoration-none text-primary">
             Log in
-          </Link>}
+          </Link>
         </div>
       </form>
     </div>
