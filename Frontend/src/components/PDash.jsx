@@ -15,9 +15,11 @@ const PDash = () => {
             <Psidebar /> 
 
             <div className="dashboard-view mx-4 p-4 bg-light rounded shadow">
-             <div className="mb-4 ">
+             <PHeader />
+             
+             <div className=" d-flex align-items-center ms-4 mb-4">
        
-                <PHeader />
+                
                  <Pcard />
             </div>        
            

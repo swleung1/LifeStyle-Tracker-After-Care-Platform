@@ -34,16 +34,7 @@ const Drcards = () => {
         </div>
       ))}
     </div>
-        // <div className='drcard_contain'>
-        //     {drcontent.map((item) => (
-        //         <div className="drcard">
-        //             <div className="drcard_cover">{item.icon}</div>
 
-        //              <div className="drcard_titles"><h5>{item.title}</h5></div>
-        //         </div>
-        //     ))}
-
-        // </div>
     )
 };
 export default Drcards;
