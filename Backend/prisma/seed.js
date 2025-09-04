@@ -1,29 +1,36 @@
+import { PrismaClient } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import { prisma } from './db.js';
+const prisma = new PrismaClient();
 
 async function main() {
   // Create 3 doctors
   const doctors = await Promise.all(
-    Array.from({ length: 3 }).map(() =>
+    Array.from({ length: 3 }).map(async () => {
+      const password = faker.internet.password();
+      const passwordHash = await bcrypt.hash(password, 10);
+
       prisma.user.create({
         data: {
           name: faker.person.fullName(),
           email: faker.internet.email(),
-          passwordHash: faker.internet.password(),
+          passwordHash,
           role: 'doctor'
         }
       })
-    )
+    })
   );
 
   // Create 5 patients
   const patients = await Promise.all(
     Array.from({ length: 5 }).map(async () => {
+      const password = faker.internet.password();
+      const passwordHash = await bcrypt.hash(password, 10);
+
       const user = await prisma.user.create({
         data: {
           name: faker.person.fullName(),
           email: faker.internet.email(),
-          passwordHash: faker.internet.password(),
+          passwordHash,
           role: 'patient'
         }
       });
@@ -82,7 +89,7 @@ async function main() {
           startAt: faker.date.soon(),
           link: faker.internet.url(),
           notes: faker.lorem.sentence(),
-          status: faker.helpers.arrayElement(['scheduled','completed','canceled','no_show'])
+          status: faker.helpers.arrayElement(['scheduled', 'completed', 'canceled', 'no_show'])
         }
       });
 
