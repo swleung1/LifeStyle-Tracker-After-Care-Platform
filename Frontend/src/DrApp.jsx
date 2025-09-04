@@ -20,10 +20,9 @@ export default function DrApp() {
     <div className="container text-center">
      <h1 className="title-top mb-3">Patient Aftercare Tracker</h1>
      {/* <div className="py-3 d-flex justify-content-center"></div> */}
-        <DrNavbar />  {/* added by me */}
+        <DrNavbar />  
 
-        <DrDash />  {/* added by me */}
-    
+        <DrDash />  
 
       
       {/* <p className="text-muted">Backend says: {msg}</p> */}

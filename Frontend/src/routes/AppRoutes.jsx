@@ -8,6 +8,7 @@ import Chat  from '../page/Chat.jsx';
 import PSurvey from '../components/PSurvey.jsx';
 import DrDash from '../components/DrDash.jsx';
 import DrApp from '../DrApp.jsx';
+import CareInstructionsForm from '../components/Drinstructions.jsx';
 
 
 export const router = createBrowserRouter([
@@ -32,6 +33,11 @@ export const router = createBrowserRouter([
     path: "/dailycheckin",
     element: <PSurvey />,
   },
+
+  {
+    path: "/careinstructions",
+    element: <CareInstructionsForm />,
+  }
   
   // {
   //   path: "/drdash",

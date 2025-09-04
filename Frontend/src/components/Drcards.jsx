@@ -1,7 +1,7 @@
 //Patient Dash Card Content: This is the Dashboard info/section under Header
 
 import React from 'react';
-import { BiBook, BiCheck, BiHeart, BiMessage } from 'react-icons/bi';
+import { BiAlarmExclamation, BiBook, BiCheck, BiHeart, BiMessage } from 'react-icons/bi';
 import "../styles/drcards.css";
 const drcontent = [
     {
@@ -14,12 +14,19 @@ const drcontent = [
         icon: <BiMessage />,
         className: 'card-messages'
     },
+    // {
+    //     title: 'alerts!',
+    //     icon: <BiAlarmExclamation />,
+    //     className: 'card-alerts'
+    // },
     {
-        title: 'alerts!',
+        title: 'create new patient care instructions',
         icon: <BiHeart />,
-        className: 'card-alerts'
+        className: 'card-create'
     }
+
 ];
+// in array above add the page links for each card
 
 const Drcards = () => {
     return(
@@ -34,16 +41,7 @@ const Drcards = () => {
         </div>
       ))}
     </div>
-        // <div className='drcard_contain'>
-        //     {drcontent.map((item) => (
-        //         <div className="drcard">
-        //             <div className="drcard_cover">{item.icon}</div>
-
-        //              <div className="drcard_titles"><h5>{item.title}</h5></div>
-        //         </div>
-        //     ))}
-
-        // </div>
+     
     )
 };
 export default Drcards;
