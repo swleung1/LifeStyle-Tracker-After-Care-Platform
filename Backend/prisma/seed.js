@@ -1,6 +1,5 @@
-import { faker } from "@faker-js/faker";
-import { PrismaClient } from "@prisma/client";
-
+import { PrismaClient } from '@prisma/client';
+import { faker } from '@faker-js/faker';
 const prisma = new PrismaClient();
 
 async function main() {
@@ -9,14 +8,15 @@ async function main() {
     Array.from({ length: 3 }).map(async () => {
       const password = faker.internet.password();
       const passwordHash = await bcrypt.hash(password, 10);
+
       prisma.user.create({
         data: {
           name: faker.person.fullName(),
           email: faker.internet.email(),
           passwordHash,
-          role: "doctor",
-        },
-      });
+          role: 'doctor'
+        }
+      })
     })
   );
 
@@ -25,13 +25,14 @@ async function main() {
     Array.from({ length: 5 }).map(async () => {
       const password = faker.internet.password();
       const passwordHash = await bcrypt.hash(password, 10);
+
       const user = await prisma.user.create({
         data: {
           name: faker.person.fullName(),
           email: faker.internet.email(),
           passwordHash,
-          role: "patient",
-        },
+          role: 'patient'
+        }
       });
 
       const patient = await prisma.patient.create({
@@ -88,13 +89,8 @@ async function main() {
           startAt: faker.date.soon(),
           link: faker.internet.url(),
           notes: faker.lorem.sentence(),
-          status: faker.helpers.arrayElement([
-            "scheduled",
-            "completed",
-            "canceled",
-            "no_show",
-          ]),
-        },
+          status: faker.helpers.arrayElement(['scheduled', 'completed', 'canceled', 'no_show'])
+        }
       });
 
       return patient;
