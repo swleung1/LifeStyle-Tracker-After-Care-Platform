@@ -1,12 +1,19 @@
 
 
 body{
-
+    /* main site background */
     height: 100vh;
-    margin: auto;
+    /* margin: auto; */
+    margin-bottom: 100px;
     /* width: 100vw; */
-    background-color: rgb(239, 239, 239);
-   
+    /* background-color: rgb(248, 245, 245); */
+    margin: 0;
+  /* background gradient */
+    background: linear-gradient(
+    to top right,
+    rgba(255, 143, 15, 0.842),  /* Sheer orange */
+    rgba(255, 255, 255, 1)   /* Solid white */
+  );
 }
 
 
@@ -16,10 +23,10 @@ body{
     font-size: 30px;
     /* font-family: 'BubbleFont', sans-serif; */
     font-weight: 700;
-    color: #bdc1cb;
+    color: #90460e;
 }
 
-
+/* --------------- All NAVBAR STYLES ------------------ */
 .Navbar{
     border-radius: 15px; 
   margin: 20px auto; 
@@ -27,6 +34,11 @@ body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   max-width: 100%; /* Ensures no overflow on small screens */
   box-sizing: border-box;
-
+   
   /* width: 100%; */
+}
+
+.navbar{
+    background: linear-gradient(135deg,#2c5785 100%, #dbeafe 10% );
+   /* background-color: #2c5785; */
 }

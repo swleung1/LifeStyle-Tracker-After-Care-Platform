@@ -41,7 +41,7 @@ const Drcards = () => {
         </div>
       ))}
     </div>
-     
+
     )
 };
 export default Drcards;

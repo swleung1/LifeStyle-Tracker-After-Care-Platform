@@ -19,9 +19,9 @@ export default function App() {
     <div className="container text-center">
      <h1 className="title-top mb-3">Patient Aftercare Tracker</h1>
      {/* <div className="py-3 d-flex justify-content-center"></div> */}
-        <Navbar />  {/* added by me */}
+        <Navbar /> 
 
-        <PDash />  {/* added by me */}
+        <PDash />  
     
         {/* <drNavbar /> //added by me */}
 

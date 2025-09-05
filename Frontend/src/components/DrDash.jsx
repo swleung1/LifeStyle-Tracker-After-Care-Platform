@@ -25,10 +25,10 @@ const DrDash = () => {
           </div>
           
         {/* DR Cards - content */}
-        <div className=" mb-4 ">
+        {/* <div className=" mb-4 "> */}
             
           <Drcards />
-        </div>
+        {/* </div> */}
       </div>
 
       {/* <p className="text-muted">Backend says: {msg}</p> */}

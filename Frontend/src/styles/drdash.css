@@ -37,10 +37,8 @@
     padding: 20px;
     border-radius: 20px;
     height: 60vh;
-    /* width: 80%; */
-    
-    /* justify-content: center; */
-
+    padding-bottom: 10px;
+    background-color: antiquewhite;
 
 }
 

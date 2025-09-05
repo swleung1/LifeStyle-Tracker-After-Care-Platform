@@ -20,7 +20,7 @@ function  DrNavbar() {
 
  return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-success mt-4 mb-4 px-4 py-3 shadow rounded-pill"
+      className="navbar navbar-expand-lg navbar-light mt-4 mb-4 px-4 py-3 shadow rounded-pill"
       style={{ borderRadius: "50px" }}
     >
       <a className="navbar-brand text-white bg fw-bold" href="#">
