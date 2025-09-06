@@ -4,6 +4,11 @@ import React from 'react';
 import { BiBook, BiCheck, BiHeart, BiMessage } from 'react-icons/bi';
 import "../styles/drcards.css";
 const drcontent = [
+     {
+        title: 'alerts!',
+        icon: <BiHeart />,
+        className: 'card-alerts'
+    },
     {
         title: 'pending checkins',
         icon: <BiBook />,
@@ -14,8 +19,9 @@ const drcontent = [
         icon: <BiMessage />,
         className: 'card-messages'
     },
+   
     {
-        title: 'alerts!',
+        title: 'open Chats',
         icon: <BiHeart />,
         className: 'card-alerts'
     }

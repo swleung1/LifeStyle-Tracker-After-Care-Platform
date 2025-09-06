@@ -34,10 +34,10 @@ const Drsidebar = () => {
         </a>
 
         {/* Alert */}
-        <a href="#" className="list_item mb-3">
+        {/* <a href="#" className="list_item mb-3">
           <BiMessage className="icons" />
           <span> Alert ({metrics.needAttention})</span>
-        </a>
+        </a> */}
 
         {/* Patients */}
         <a href="#" className="list_item mb-3">
@@ -47,7 +47,7 @@ const Drsidebar = () => {
 
        < a href="#" className="list_item mb-3">
           <BiBookAlt className="icons" />
-          <span> Open Chat ({metrics.openChats})</span>
+          <span> Chat ({metrics.openChats})</span>
         </a>
       </div>
     </div>

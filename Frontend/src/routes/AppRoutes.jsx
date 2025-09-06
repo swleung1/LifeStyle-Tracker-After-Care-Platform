@@ -8,19 +8,36 @@ import Chat  from '../page/Chat.jsx';
 import PSurvey from '../components/PSurvey.jsx';
 import DrDash from '../components/DrDash.jsx';
 import DrApp from '../DrApp.jsx';
-
+import Psidebar from '../components/Psidebar.jsx';
 
 export const router = createBrowserRouter([
 
   {
+    // PAtient Home Page route
     path: "/",
-    element: <App />,
+      element:  (
+     <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // height: '100vh',
+        gap: '40px',
+      }}
+    >
+      <div style={{ width: '300px' }}>
+        {/* <Psidebar /> */}
+      </div>
+          <App />,
+    </div>),
   },
   // {
-  //   path: "/",
+  // 'GLOBAL' Login route
+  //   path: "//ogin",
   //   element: <Login/>,
   // },
    {
+
     path: "/drdash",
     element: <DrApp />,
   },
@@ -28,9 +45,26 @@ export const router = createBrowserRouter([
     path: "/chat",
     element: <Chat />,
   },
+  // PATIENT SURVEY ROUTE
     {
     path: "/dailycheckin",
-    element: <PSurvey />,
+    element:  (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // height: '100vh',
+        gap: '40px',
+      }}
+    >
+      <div style={{ width: '300px' }}>
+        <Psidebar />
+      </div>
+      <div style={{ width: '700px' }}>
+        <PSurvey />
+      </div>
+    </div>),
   },
   
   // {

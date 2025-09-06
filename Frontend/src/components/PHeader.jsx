@@ -25,12 +25,11 @@ const PHeader = () => {
   return (
     <div className="pheader d-flex justify-content-between align-items-end mb-4">
    
-
-        <div className="notify">
+{/* Notification button for inner dash- not needed */}
+        {/* <div className="notify">
           <BiNotification className="icon" />
+        </div> */}
 
-          {/* <button type="notice_button" class="btn btn-danger"> <BiNotification className="icon" />Notifications</button>  */}
-        </div>
       </div>
     // </div>
   );
