@@ -1,0 +1,50 @@
+/************************ Dr Dashboard View */
+
+
+
+
+/*_______ notification icon -----------*/
+.notify-dr{
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 10px;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.5s ease-in-out;
+}
+
+.notify-dr .icon{
+    color: whitesmoke;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;  /* slows icon hovering affect */
+   
+}
+
+.icon-dr:hover{
+
+    transform: scale(1.3); /* any icon hovering affect */
+    cursor: pointer;
+}
+
+
+/************************ Patient Dashboard View */
+.drdash{
+  display: flex;
+    /* margin-left: 300px; to avoid overlap with sidebar */
+    padding: 20px;
+    border-radius: 20px;
+    height: 60vh;
+    padding-bottom: 10px;
+    background-color: antiquewhite;
+
+}
+
+/* dashbord card/container width */
+dr_dashboard-view{
+
+    width: 100%;
+}
+

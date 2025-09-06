@@ -1,0 +1,39 @@
+.drcard_contain {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.drcard {
+  padding: 16px;
+  border-radius: 8px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+   /* spacing of cards */
+  margin-bottom: 15px; 
+  margin-left: 20px;
+}
+
+.card-pending {
+  background-color: #f0f8ff; /* Light blue */
+  border: 1px solid #cce7ff;
+}
+
+.card-messages {
+  background-color: #fff0f5; /* Light pink */
+  border: 1px solid #f9c2d8;
+}
+
+.card-alerts {
+  background-color: #fffbe6; /* Light yellow */
+  border: 1px solid #ffe58f;
+}
+.drcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(227, 24, 24, 0.2);
+    transition: all 0.3s ease;
+}
