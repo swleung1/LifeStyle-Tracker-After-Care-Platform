@@ -32,12 +32,13 @@ const pcontent = [
         title: 'daily checkins',
         icon: <BiHeart size={28}/>,
         className: 'card-checkins',
-        link: '/dailycheckin' // Link to daily check-in page
+        link: '/dailycheckin' // Links card to daily check-in page
     },
     {
         title: 'active instuctions',
         icon: <BiCheck size={28}/>,
-        className: 'card-instructions'
+        className: 'card-instructions',
+         link: '/careinstructions' // Links card to care instructions page
     },
     {
         title: daysInRecovery !== null ? `${daysInRecovery} days in recovery` : 'days in recovery',

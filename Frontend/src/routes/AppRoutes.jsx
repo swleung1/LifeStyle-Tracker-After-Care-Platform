@@ -9,6 +9,9 @@ import PSurvey from '../components/PSurvey.jsx';
 import DrDash from '../components/DrDash.jsx';
 import DrApp from '../DrApp.jsx';
 import Psidebar from '../components/Psidebar.jsx';
+import Pinstructions from '../components/PInstructions.jsx';
+import PEmergency from '../components/PEmerContact.jsx';
+
 
 export const router = createBrowserRouter([
 
@@ -66,11 +69,15 @@ export const router = createBrowserRouter([
       </div>
     </div>),
   },
-  
-  // {
-  //   path: "/drdash",
-  //   element: <DrDash />,
-  // }
+    {
+    path: "/careinstructions",
+    element: <Pinstructions />,
+  },
 
+    {
+    path: "/emergency",
+    element: <PEmergency />,
+  },
+  // 
 
 ]); 

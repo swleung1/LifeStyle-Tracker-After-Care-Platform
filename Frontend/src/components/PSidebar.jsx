@@ -33,10 +33,10 @@ const Psidebar = () => {
             <span> Chat</span>
         </a>
 
-        <a href="#" className="list_item mb-3">
+        <Link to="/emergency" className="list_item mb-3">
              <BiBookAlt className="icons"/>
             <span> Help</span>
-        </a>
+        </Link>
 
       </div>
 

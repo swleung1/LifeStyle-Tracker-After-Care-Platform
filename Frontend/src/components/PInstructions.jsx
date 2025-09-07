@@ -6,7 +6,7 @@ import "../styles/pdash.css";
 
 import { useEffect, useState } from "react";
 
-function PHeader() {
+function Pinstructions() {
   const [patientInstructions, setPatientInstructions] = useState("");
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function PHeader() {
       <div className="pheadtitle ">Care Instructions: </div>
       <div className="pheader_activ">
         <div className="care_instructs d-flex align-items-center">
-          {/* imports instructions data pulled from our database/backend */}
+          {/* imports instructions/data pulled from our database/backend */}
           {patientInstructions
             ? patientInstructions
             : "No Instructions from your care provider"}
@@ -38,3 +38,4 @@ function PHeader() {
     </div>
   );
 }
+export default Pinstructions;

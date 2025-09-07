@@ -11,9 +11,10 @@ body{
   /* background gradient */
     background: linear-gradient(
     to top right,
-    rgba(255, 143, 15, 0.842),  /* Sheer orange */
-    rgba(255, 255, 255, 1)   /* Solid white */
+    rgba(255, 143, 15, 0.842),rgba(255, 255, 255, 1) 
   );
+
+  /* margin-top: 100px; */
 }
 
 
