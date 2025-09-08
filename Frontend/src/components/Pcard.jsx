@@ -6,7 +6,7 @@ import { BiBook, BiCheck, BiHeart } from 'react-icons/bi';
 import "../styles/pcards.css";
 import { Link } from 'react-router-dom';
 
-// FETCH days in recovery from backend to display it
+// FETCH days in recovery from backend to display it (Optional)
 const Pcard = () => {
     const [daysInRecovery, setDaysInRecovery] = useState(null);
 

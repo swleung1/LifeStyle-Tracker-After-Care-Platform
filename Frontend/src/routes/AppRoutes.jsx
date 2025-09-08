@@ -11,12 +11,42 @@ import DrApp from '../DrApp.jsx';
 import Psidebar from '../components/Psidebar.jsx';
 import Pinstructions from '../components/PInstructions.jsx';
 import PEmergency from '../components/PEmerContact.jsx';
+// import { Alert } from 'bootstrap';
+import Alert from '../components/DrAlerts.jsx';
+import DrInsrtuct from '../components/DrInsrtuct.jsx';
 
 
 export const router = createBrowserRouter([
 
+   // {
+  // 'GLOBAL' Login route
+  //   path: "//ogin",
+  //   element: <Login/>,
+  // },
+
+  // CARE PROVIDER DASHBOARD ROUTE
+   {
+
+    path: "/drdash",
+    element: <DrApp />,
+  },
   {
-    // PAtient Home Page route
+    path: "/chat",
+    element: <Chat />,
+  },
+  {
+    path: "/alerts",
+    element: <Alert />,
+  },
+    {
+    path: "/drform",
+    element: <DrInsrtuct />,
+  },
+
+
+  // PAtient Home Page route
+   {
+    
     path: "/",
       element:  (
      <div
@@ -33,20 +63,6 @@ export const router = createBrowserRouter([
       </div>
           <App />,
     </div>),
-  },
-  // {
-  // 'GLOBAL' Login route
-  //   path: "//ogin",
-  //   element: <Login/>,
-  // },
-   {
-
-    path: "/drdash",
-    element: <DrApp />,
-  },
-  {
-    path: "/chat",
-    element: <Chat />,
   },
   // PATIENT SURVEY ROUTE
     {

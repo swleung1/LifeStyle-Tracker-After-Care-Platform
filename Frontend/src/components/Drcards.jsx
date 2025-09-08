@@ -3,28 +3,30 @@
 import React from 'react';
 import { BiBook, BiCheck, BiHeart, BiMessage } from 'react-icons/bi';
 import "../styles/drcards.css";
+import { Link } from 'react-router-dom';
+
+
+
 const drcontent = [
      {
         title: 'alerts!',
         icon: <BiHeart />,
-        className: 'card-alerts'
+        className: 'card-alerts',
+        link: '/alerts' // Links card to alerts page
+
     },
+
     {
-        title: 'pending checkins',
-        icon: <BiBook />,
-        className: 'card-pending'
-    },
-    {
-        title: 'messages from today',
+        title: 'send care instructions',
         icon: <BiMessage />,
-        className: 'card-messages'
+        className: 'drcard-intructions',
+        link: '/drform'
+        
+        // Links card to care instructions page
+        // link: '/careinstructions'
     },
    
-    {
-        title: 'open Chats',
-        icon: <BiHeart />,
-        className: 'card-alerts'
-    }
+   
 ];
 
 const Drcards = () => {
@@ -32,15 +34,16 @@ const Drcards = () => {
 
           <div className="drcard_contain">
       {drcontent.map((item, index) => (
-        <div key={index} className={`drcard ${item.className}`}>
+        <Link to={item.link} key={index} className={`drcard ${item.className}`}>
           <div className="drcard_cover">{item.icon}</div>
           <div className="drcard_titles">
             <h5>{item.title}</h5>
           </div>
-        </div>
+        </Link>
+        // </div>
       ))}
     </div>
+    );
 
-    )
 };
 export default Drcards;

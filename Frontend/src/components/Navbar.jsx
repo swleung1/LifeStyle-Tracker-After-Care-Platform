@@ -28,41 +28,7 @@ function Navbar() {
         Welcome {patientName ? patientName : "Patient"}!
       </a>
 
-      {/* <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button> */}
-      {/* <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item active">
-            <a className="nav-link text-white" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-              Daily Checkin
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-             Chat
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled text-white-50" href="#">
-              Disabled
-            </a>
-          </li>
-        </ul>
-      </div> */}
+      
     </nav>
   );
 }
