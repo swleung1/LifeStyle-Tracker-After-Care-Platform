@@ -1,8 +1,7 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from '../src/libs/prisma.js'
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 router.get("/dashboard", async (req, res) => {
   const doctorId = parseInt(req.query.doctorId || "1");
