@@ -49,6 +49,18 @@ function Sidebar() {
         icon: "bi-journal-medical",
         label: "Assign Care Plan",
       },
+
+      {
+        to: "/doctor-profile",
+        icon: "bi-journal-medical",
+        label: "Assign Care Plan",
+      },
+
+       {
+        to: "/patient-profile",
+        icon: "bi-journal-medical",
+        label: "Assign Care Plan",
+      },
     ],
   };
 

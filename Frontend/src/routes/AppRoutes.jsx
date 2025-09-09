@@ -9,6 +9,9 @@ import ScheduleAppointmentPage from "../pages/ScheduleAppointmentPage";
 import AssignCarePlanPage from "../pages/AssignCarePlanPage";
 import PatientListPage from "../pages/PatientListPage";
 
+import DoctorProfileEdit from "../pages/DoctorProfile.jsx";
+import PatientProfileEdit from "../pages/PatientProfile.jsx";
+
 function AppRoutes() {
   return (
     <Routes>
@@ -22,6 +25,9 @@ function AppRoutes() {
       <Route path="/patients" element={<PatientListPage />} />
       <Route path="/dashboard/patient" element={<PatientDashboardPage />} />
       <Route path="/dashboard/doctor" element={<DoctorDashboardPage />} />
+
+      <Route path="/doctor-profile" element={<DoctorProfileEdit />} />
+      <Route path="/patient-profile" element={<PatientProfileEdit />} />
     </Routes>
   );
 }
