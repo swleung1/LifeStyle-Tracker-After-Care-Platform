@@ -49,78 +49,93 @@ function LoginPage() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5">
-      <form
-        onSubmit={handleSubmit}
-        className="card p-4 shadow"
-        style={{ width: "30rem" }}
-        aria-label="Login form"
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+      <div
+        className="row shadow-lg rounded-4 overflow-hidden"
+        style={{
+          maxWidth: "900px",
+          width: "100%",
+          background: "linear-gradient(to right, #f0f4ff, #ffffff)",
+        }}
       >
-        <h2 className="mb-4 text-primary text-center">Log In</h2>
-
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className={`form-control ${errors.email ? "is-invalid" : ""}`}
-            value={formData.email}
-            onChange={handleChange}
-            autoFocus
-          />
-          {errors.email && (
-            <div className="invalid-feedback">{errors.email}</div>
-          )}
+       
+        <div className="col-md-6 d-none d-md-flex flex-column justify-content-center align-items-center p-5">
+          <div className="text-center">
+            <i className="bi bi-person-circle text-primary fs-1 mb-3"></i>
+            <h4 className="text-primary fw-bold">Welcome Back</h4>
+            <p className="text-muted mt-2">
+              Log in to continue your care journey.
+            </p>
+          </div>
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            className={`form-control ${errors.password ? "is-invalid" : ""}`}
-            value={formData.password}
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-          {errors.password && (
-            <div className="invalid-feedback">{errors.password}</div>
-          )}
+       
+        <div className="col-12 col-md-6 p-5">
+          <form onSubmit={handleSubmit} aria-label="Login form">
+            <h2 className="mb-4 text-center text-primary">Log In</h2>
+
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className={`form-control rounded-3 ${errors.email ? "is-invalid" : ""}`}
+                value={formData.email}
+                onChange={handleChange}
+                autoFocus
+              />
+              {errors.email && (
+                <div className="invalid-feedback">{errors.email}</div>
+              )}
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className={`form-control rounded-3 ${errors.password ? "is-invalid" : ""}`}
+                value={formData.password}
+                onChange={handleChange}
+                autoComplete="current-password"
+              />
+              {errors.password && (
+                <div className="invalid-feedback">{errors.password}</div>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="btn btn-primary w-100 rounded-pill py-2"
+              disabled={loading}
+            >
+              {loading ? "Logging in..." : "Log In"}
+            </button>
+
+            <div className="mt-3 text-center">
+              <button
+                type="button"
+                className="btn btn-link"
+                onClick={() => setShowForgotModal(true)}
+              >
+                Forgot password?
+              </button>
+            </div>
+
+            <hr />
+            <div className="text-center">
+              <span>Don't have an account? </span>
+              <Link to="/signup" className="text-decoration-none text-primary fw-semibold">
+                Sign up
+              </Link>
+            </div>
+          </form>
         </div>
+      </div>
 
-        <button
-          type="submit"
-          className="btn btn-primary w-100"
-          disabled={loading}
-        >
-          {loading ? "Logging in..." : "Log In"}
-        </button>
-
-        <div className="mt-3 text-center">
-          <button
-            type="button"
-            className="btn btn-link"
-            onClick={() => setShowForgotModal(true)}
-          >
-            Forgot password?
-          </button>
-        </div>
-
-        <hr />
-        <div className="text-center">
-          <span>Don't have an account? </span>
-          <Link to="/signup" className="text-decoration-none text-primary">
-            Sign up
-          </Link>
-        </div>
-      </form>
-
+    
       {showForgotModal && (
         <ForgotPasswordModal
           onClose={() => setShowForgotModal(false)}
