@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { z } from 'zod';
 import passport from "passport";
+import patientRoutes from '../routes/patient.js';
+import doctorRoutes from '../routes/doctor.js'
 
 dotenv.config();
 
@@ -16,13 +18,11 @@ app.use(express.json());
 app.use(passport.initialize());
 
 // Routes
-import authRoutes from './routes/authRoutes.js';
-import patientRoutes from './routes/patientRoutes.js';
-import doctorRoutes from './routes/doctorRoutes.js';
+// import authRoutes from './routes/authRoutes.js';
 
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 app.use('/api/patient', patientRoutes);
-app.use('api/doctor', doctorRoutes)
+app.use('/api/doctor', doctorRoutes)
 
 // health check
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));

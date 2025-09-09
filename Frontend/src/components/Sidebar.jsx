@@ -79,7 +79,7 @@ function Sidebar() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `d-flex align-items-center gap-2 px-3 py-2 rounded-3 shadow-sm w-100 ${
+              `d-flex align-items-center gap-2 px-3 py-2 rounded-3 shadow-sm w-100 text-decoration-none ${
                 isActive ? "bg-primary bg-opacity-25 fw-bold" : "bg-white"
               }`
             }

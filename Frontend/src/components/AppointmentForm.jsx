@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function AppointmentForm() {
   const [formData, setFormData] = useState({
-    provider: "",
+    doctor: "",
     date: "",
     time: "",
     reason: "",
@@ -23,15 +23,15 @@ function AppointmentForm() {
   return (
     <form onSubmit={handleSubmit} className="rounded-4 p-4 shadow-sm bg-white border">
       <div className="mb-3">
-        <label className="form-label">Provider</label>
+        <label className="form-label">Doctor</label>
         <select
-          name="provider"
+          name="doctor"
           className="form-select"
-          value={formData.provider}
+          value={formData.doctor}
           onChange={handleChange}
           required
         >
-          <option value="">Select a provider</option>
+          <option value="">Select a doctor</option>
           <option value="Dr. Smith">Dr. Smith</option>
           <option value="Dr. Lee">Dr. Lee</option>
         </select>

@@ -35,12 +35,7 @@ const patients = [
     name: "Emily Chen",
     survey: {
       risk: "ok",
-      responses: {
-        painLevel: 2,
-        mobility: 5,
-        appetite: true,
-        fever: 98.6,
-      },
+      responses: {},
     },
   },
 ];
@@ -146,13 +141,13 @@ function AssignCarePlanPage() {
 
               {selectedPatient && (
                 <div className="mb-4">
-                  <h6 className="fw-light">Latest Survey Snapshot</h6>
+                  <h6 className="fw-light">Latest Survey</h6>
                   <ul className="list-unstyled small">
                     <li><strong>Risk:</strong> {selectedPatient.survey.risk}</li>
                     <li><strong>Pain Level:</strong> {selectedPatient.survey.responses.painLevel}</li>
                     <li><strong>Mobility:</strong> {selectedPatient.survey.responses.mobility}</li>
                     <li><strong>Appetite:</strong> {selectedPatient.survey.responses.appetite ? "Yes" : "No"}</li>
-                    <li><strong>Fever:</strong> {selectedPatient.survey.responses.fever}°F</li>
+                    <li><strong>Temp:</strong> {selectedPatient.survey.responses.fever} F</li>
                   </ul>
                 </div>
               )}
